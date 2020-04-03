@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Etutor.Models.Assign>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+    <h2>Bulk Allocation List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create") | @Html.ActionLink("Create Multiple Assign", "CreateMultiple")
+
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Student.Name)*@
+            <label>Student Name</label>
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Tutor.Name)*@
+            <label>Tutor Name</label>
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Student.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Tutor.Name)
+    </td>
+    <td>
+        @Html.ActionLink("Change Tutor", "Edit", new { id = item.Id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+    </td>
+</tr>
+}
+
+</table>
