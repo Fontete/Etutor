@@ -15,8 +15,9 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-group">
-        <label>Student</label>
+
         <div class="col-md-10">
+            <label>Student</label>
             <select name="stdID">
                 @foreach (var item in Model)
                 {
@@ -24,8 +25,9 @@
                 }
             </select>
         </div>
-        <label>Tutor</label>
+
         <div class="col-md-10">
+            <label>Tutor</label>
             <select name="tutorID">
                 @foreach (var item in ViewBag.Tutors)
                 {
