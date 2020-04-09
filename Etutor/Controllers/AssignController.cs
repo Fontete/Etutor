@@ -23,39 +23,6 @@ namespace Etutor.Controllers
             return View(assigns.ToList());
         }
 
-        // GET: Assigns/Create
-        public ActionResult Create()
-        {
-            ViewBag.Tutors = db.Tutors.ToList();
-            ViewBag.Staff = db.Staffs.ToList();
-            var students = db.Students.ToList();
-            return View(students);
-        }
-
-        // POST: Assigns/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id")] int stdID, int tutorID, int? staffID)
-        {
-            Assign assign = new Assign();
-            if (ModelState.IsValid)
-            {
-                var student = db.Students.Where(m => m.Id == stdID).SingleOrDefault();
-                var tutor = db.Tutors.Where(m => m.Id == tutorID).SingleOrDefault();
-                var staff = db.Staffs.Where(m => m.Id == staffID).SingleOrDefault();
-                assign.Id = student.Id;
-                assign.Student = student;
-                assign.Tutor = tutor;
-                assign.Staff = staff;
-                db.Assigns.Add(assign);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            ViewBag.Id = new SelectList(db.Students, "Name", "Phone", "Email", assign.Id);
-            return View(assign);
-        }
-
         // GET: Assigns/CreateMultiple
         public ActionResult CreateMultiple()
         {

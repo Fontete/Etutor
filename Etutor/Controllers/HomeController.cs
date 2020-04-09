@@ -24,7 +24,6 @@ namespace Etutor.Controllers
                 return true;
             return false;
         }
-
         //[HttpPost]
         public ActionResult Login(string username, string password, bool rememberMe)
         {

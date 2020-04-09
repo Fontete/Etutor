@@ -2,14 +2,43 @@
 @{
     ViewBag.Title = "Account";
 }
+<link rel="stylesheet" href="~/Content/css/index.css">
+<div class="container-fluid login">
 
-<h2>Account</h2>
-<form action="Home/Login" method="post">
-    <label>Username</label>
-    <input type="text" name="username" /> <br />
-    <label>Password</label>
-    <input type="Password" name="password" /> <br />
-    @Html.CheckBox("rememberMe", false)
-    <label>Remember me</label><br />
-    <button type="submit">Login</button>
-</form>
+    <div class="d-flex justify-content-center h-100">
+        <div class="card">
+            <div class="card-header">
+                <div class="logo"></div>
+                <div class="d-flex justify-content-end social_icon">
+                    <span><i class="fab fa-facebook-square"></i></span>
+                    <span><i class="fab fa-google-plus-square"></i></span>
+                    <span><i class="fab fa-twitter-square"></i></span>
+                </div>
+            </div>
+            <div class="card-body">
+                <form action="Home/Login" method="post">
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        </div>
+                        <input type="text" class="form-control" name="username" placeholder="username">
+
+                    </div>
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                        </div>
+                        <input type="password" name="password" class="form-control" placeholder="password">
+                    </div>
+                    <div class="row align-items-center remember">
+                        @Html.CheckBox("rememberMe", false)
+                        <label>RememberMe</label>
+                    </div>
+                    <div class="form-group">
+                            <input type="submit" value="Login" class="btn float-right login_btn">
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
