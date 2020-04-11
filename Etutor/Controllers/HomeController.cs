@@ -48,7 +48,7 @@ namespace Etutor.Controllers
             {
                 case 1: return RedirectToAction("Index", "Assign");
                 case 2: return RedirectToAction("Index", "Tutor");
-                case 3: return RedirectToAction("Index", "Student");
+                case 3: return RedirectToAction("Index", "Student",new { id=type.Id});
                 default: return RedirectToAction("Index", "Home");
             }
         }

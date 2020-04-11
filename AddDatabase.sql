@@ -1,9 +1,5 @@
 use eTutor
 go
---------------------------------------------
-select * from Tutors
-select * from Staffs
-select * from Students
 --------------Add data to Accounts table--------------------
 --------------Add staff account--------------------
 insert into Accounts(Username,[Password],[Role])
@@ -24,7 +20,23 @@ values ('student2','12345',3)
 insert into Accounts(Username,[Password],[Role])
 values ('student3','12345',3)
 insert into Accounts(Username,[Password],[Role])
+values ('hellen','12345',3)
+insert into Accounts(Username,[Password],[Role])
+values ('robel','12345',3)
+insert into Accounts(Username,[Password],[Role])
+values ('kelly','12345',3)
+insert into Accounts(Username,[Password],[Role])
+values ('nubel','12345',3)
+insert into Accounts(Username,[Password],[Role])
+values ('kayle','12345',3)
+insert into Accounts(Username,[Password],[Role])
+values ('indigo','12345',3)
+insert into Accounts(Username,[Password],[Role])
+values ('mitty','12345',3)
+insert into Accounts(Username,[Password],[Role])
+values ('bahara','12345',3)
 --------------Add tutor account--------------------
+insert into Accounts(Username,[Password],[Role])
 values ('tutor','12345',2)
 insert into Accounts(Username,[Password],[Role])
 values ('tutor1','12345',2)
@@ -50,12 +62,32 @@ insert into Students(Id,Name,Phone,Email)
 values ('7','Fred','0787890000','student2@uog.com')
 insert into Students(Id,Name,Phone,Email)
 values ('8','Paul','0989071811','student3@uog.com')
+insert into Students(Id,Name,Phone,Email)
+values ('9','Hellen','13678019834','hellen@uog.com')
+insert into Students(Id,Name,Phone,Email)
+values ('10','Robel','618731913051','robel@uog.com')
+insert into Students(Id,Name,Phone,Email)
+values ('11','Kelly','87188718113','kelly@uog.com')
+insert into Students(Id,Name,Phone,Email)
+values ('12','Nubel','878179891','nubel@uog.com')
+insert into Students(Id,Name,Phone,Email)
+values ('13','Kayle','5672156771','kayle@uog.com')
+insert into Students(Id,Name,Phone,Email)
+values ('14','Indigo','47487419811','indigo@uog.com')
+insert into Students(Id,Name,Phone,Email)
+values ('15','Mitty','7889081989','mitty@uog.com')
+insert into Students(Id,Name,Phone,Email)
+values ('16','Bahara','47891891798','bahara@uog.com')
 --------------Add data to Tutors table--------------------
 insert into Tutors(Id,Name,Phone,Email)
-values ('9','Alonso','3478010088','tutor@uog.com')
+values ('17','Alonso','3478010088','tutor@uog.com')
 insert into Tutors(Id,Name,Phone,Email)
-values ('10','Fernando','568190000','tutor1@uog.com')
+values ('18','Fernando','568190000','tutor1@uog.com')
 insert into Tutors(Id,Name,Phone,Email)
-values ('11','David','234671000','tutor2@uog.com')
+values ('19','David','234671000','tutor2@uog.com')
 insert into Tutors(Id,Name,Phone,Email)
-values ('12','John','9018771771','tutor3@uog.com')
+values ('20','John','9018771771','tutor3@uog.com')
+--------------------------------------------
+select * from Tutors
+select * from Staffs
+select * from Students

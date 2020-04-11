@@ -138,6 +138,10 @@
     <Compile Include="Migrations\202004011738321_v1.designer.cs">
       <DependentUpon>202004011738321_v1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004111049404_v2.cs" />
+    <Compile Include="Migrations\202004111049404_v2.designer.cs">
+      <DependentUpon>202004111049404_v2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Assign.cs" />
@@ -155,12 +159,14 @@
     <Content Include="Content\css\index.css" />
     <Content Include="Content\index.css" />
     <Content Include="favicon.ico" />
+    <Content Include="Files\Product Backlog.jpg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Files\courseworks_coursework_2019_2020_Term_2_Level_6_CW_COMP1640_Group.docx" />
+    <Content Include="Files\courseworks_coursework_2019_2020_Term_2_Level_6_CW_COMP1640_Individual.docx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -206,6 +212,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202004011738321_v1.resx">
       <DependentUpon>202004011738321_v1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004111049404_v2.resx">
+      <DependentUpon>202004111049404_v2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

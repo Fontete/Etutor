@@ -6,16 +6,37 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 
 namespace Etutor.Controllers
 {
+    [Authorize]
     public class StudentController : Controller
     {
         private EtutorContext db = new EtutorContext();
         // GET: Student
-        public ActionResult Index()
+        public ActionResult Index(int? id)
         {
-            return View();
+            if (id != null)
+            {
+                Session["S_ID"] = id;
+            }
+            else { id = Convert.ToInt32(Session["S_ID"]); }
+            var found = db.Documents.Where(m => m.Assign.Id == id).ToList();
+            return View(found);
+        }
+
+        public FileResult Download(string download)
+        {
+            try
+            {
+                var file = download;
+                return File(file, "application/force- download", Path.GetFileName(file));
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
         }
 
         [HttpGet]
@@ -31,17 +52,10 @@ namespace Etutor.Controllers
 
             if (file?.ContentLength > 0)
             {
-                //try
-                //{
+                try
+                {
                     var fileTypes = new[] { ".pdf", ".doc", ".docx", ".jpeg", ".jpg", ".png", ".gif" };
                     var checkTypes = Path.GetExtension(file.FileName).ToLower();
-
-                    //if (!fileTypes.Contains(checkTypes))
-                    //{
-                    //    ViewBag.Error = "Invalid file type!";
-                    //    return View();
-                    //}
-
                     string title = String.Concat(Path.GetFileNameWithoutExtension(file.FileName));
                     string filename = String.Concat(title, checkTypes);
                     string path = Path.Combine(Server.MapPath("~/Files"), Path.GetFileName(filename));
@@ -65,6 +79,7 @@ namespace Etutor.Controllers
                         UploadTime = DateTime.Now,
                         Type = type,
                         Url = path,
+                        Name = filename,
                         Assign = db.Assigns.Where(m => m.Id == stdid).SingleOrDefault()
                     };
                     db.Documents.Add(doc);
@@ -72,19 +87,23 @@ namespace Etutor.Controllers
 
                     ViewBag.Message = "Uploaded successfully!";
 
-                    //SendEmail(staffs.Email, s_id);
-            //    }
-            //    catch (Exception e)
-            //    {
-            //        ViewBag.Error = "Please try again " + e.Message;
-            //    }
+                //SendEmail(staffs.Email, s_id);
             }
-            //else
-            //{
-            //    ViewBag.Error = "Please choose a file you want to upload";
-            //}
+                catch (Exception e)
+            {
+                ViewBag.Error = "Please try again " + e.Message;
+            }
+        }
+            else
+            {
+                ViewBag.Error = "Please choose a file you want to upload";
+            }
 
-
+            if (ViewBag.Error != null)
+            {
+                TempData["MSG"] = ViewBag.Error;
+                return RedirectToAction("Upload", "Student");
+            }
             return RedirectToAction("Index", "Student");
         }
 
