@@ -54,7 +54,7 @@ namespace Etutor.Controllers
                     assign.Staff = staff;
                     db.Assigns.Add(assign);
                     db.SaveChanges();
-                    Email(student.Email, "Assign Notification", "You are assigned to new course");
+                    Email(student.Email, tutor.Email, "Assign Notification", "You are assigned to new course");
                 }
             }
             return RedirectToAction("Index");
@@ -88,6 +88,7 @@ namespace Etutor.Controllers
                 assign.Tutor = tutor;
                 assign.Staff = staff;
                 db.SaveChanges();
+                Email(student.Email, tutor.Email, "Change Tutor", "There is an update of tutor");
                 return RedirectToAction("Index");
             }
             ViewBag.Id = new SelectList(db.Students, "Name", "Phone", "Email", assign.Id);
@@ -128,7 +129,7 @@ namespace Etutor.Controllers
         //    db.SaveChanges();
         //}
 
-        public void Email(string To, string Subject, string TextBody)
+        public void Email(string To, string Cc, string Subject, string TextBody)
         {
             try
             {
@@ -139,6 +140,7 @@ namespace Etutor.Controllers
 
                 // Set recipient email address
                 oMail.To = To;
+                oMail.Cc = Cc;
 
                 // Set email subject
                 oMail.Subject = Subject;
