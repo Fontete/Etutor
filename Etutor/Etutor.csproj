@@ -46,6 +46,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EASendMail, Version=7.7.0.1, Culture=neutral, PublicKeyToken=88adb80ecd66540b, processorArchitecture=MSIL">
+      <HintPath>..\packages\EASendMail.7.7.0.1\lib\net461\EASendMail.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -130,6 +133,7 @@
     <Compile Include="Controllers\AssignController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="Controllers\TutorController.cs" />
     <Compile Include="DAL\EtutorContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -154,19 +158,19 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\asset\Etutor2.svg" />
     <Content Include="Content\asset\login-background.png" />
     <Content Include="Content\asset\trắng.svg" />
     <Content Include="Content\css\index.css" />
+    <Content Include="Content\css\dashboard.css" />
     <Content Include="Content\index.css" />
     <Content Include="favicon.ico" />
-    <Content Include="Files\Product Backlog.jpg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Files\courseworks_coursework_2019_2020_Term_2_Level_6_CW_COMP1640_Group.docx" />
-    <Content Include="Files\courseworks_coursework_2019_2020_Term_2_Level_6_CW_COMP1640_Individual.docx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -190,15 +194,16 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Assign\Delete.cshtml" />
     <Content Include="Views\Assign\Edit.cshtml" />
     <Content Include="Views\Assign\Index.cshtml" />
     <Content Include="Views\Assign\CreateMultiple.cshtml" />
     <Content Include="Views\Student\Upload.cshtml" />
     <Content Include="Views\Student\Index.cshtml" />
+    <Content Include="Views\Assign\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Tutor\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

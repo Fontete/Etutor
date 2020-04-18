@@ -106,7 +106,5 @@ namespace Etutor.Controllers
             }
             return RedirectToAction("Index", "Student");
         }
-
-
     }
 }
