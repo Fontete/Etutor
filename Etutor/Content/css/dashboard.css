@@ -174,11 +174,15 @@ h3 {
         border: 1px solid grey;
         border-radius: 5px;
         padding: 25px;
+        max-width: 22%;
         cursor: pointer;
         -moz-osx-font-smoothing: greyscale;
         backface-visibility: hidden;
         transform: translateZ(0);
         transition: tranform 0.25s ease-out;
+    }
+    .card-list .card-container h2 {
+       word-wrap:break-word;
     }
 
 h2, p {

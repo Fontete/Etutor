@@ -1,0 +1,37 @@
+﻿@using Etutor.Models
+@model List<Assign>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Allocation</h2>
+<table class="table">
+    <tr>
+        <th>
+            <label>Assign Id</label>
+        </th>
+        <th>
+            <label>Student Name</label>
+        </th>
+        <th>
+            <label>Detail</label>
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Student.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Detail", "Detail", new { assignId = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+

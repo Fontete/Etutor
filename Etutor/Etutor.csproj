@@ -148,7 +148,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="ChatHub.cs" />
+    <Compile Include="Signalr\ChatHub.cs" />
     <Compile Include="Controllers\AssignController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
@@ -175,7 +175,7 @@
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\Tutor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Startup.cs" />
+    <Compile Include="Signalr\Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\asset\Etutor2.svg" />
@@ -223,6 +223,9 @@
     <Content Include="Views\Student\Index.cshtml" />
     <Content Include="Views\Assign\Delete.cshtml" />
     <Content Include="Views\Tutor\Chat.cshtml" />
+    <Content Include="Views\Tutor\Index.cshtml" />
+    <Content Include="Views\Tutor\Upload.cshtml" />
+    <Content Include="Views\Tutor\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -61,8 +61,6 @@ namespace Etutor.Controllers
                     string path = Path.Combine(Server.MapPath("~/Files"), Path.GetFileName(filename));
                     file.SaveAs(path);
 
-                    //System.IO.File.Copy(file.ToString(), path);
-
                     string type = "";
                     var docType = new[] { ".doc", ".docx", ".pdf" };
                     if (docType.Contains(checkTypes))
@@ -87,7 +85,6 @@ namespace Etutor.Controllers
 
                     ViewBag.Message = "Uploaded successfully!";
 
-                //SendEmail(staffs.Email, s_id);
             }
                 catch (Exception e)
             {

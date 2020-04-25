@@ -33,7 +33,7 @@
         <!-- Sidebar -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                <a href="/Index/Dashboard"><img alt='logo' style="width:70%; height: 70%;" src='../asset/Etutor2.svg'></a>
+                <a href="/Index/Dashboard"><img alt='logo' style="width:70%; height: 70%;" src='~/Content/asset/Etutor2.svg'></a>
             </div>
 
             <ul class="list-unstyled components">
@@ -108,14 +108,8 @@
                             </li>
                             <li class="nav-item active m-2">
                                 <div class="dropdown">
-                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                                        <i class="fa fa-user" aria-hidden="true"></i>
-                                    </button>
-                                    <div class="dropdown-menu animate slideIn">
-                                        <a class="dropdown-item" href="#">Link 1</a>
-                                        <a class="dropdown-item" href="#">Link 2</a>
-                                        <a class="dropdown-item" href="#">Link 3</a>
-                                    </div>
+                                    @Html.ActionLink("Log out", "LogOut", "Home", new { area = "" }, new { @class = "btn btn-primary" })
+
                                 </div>
                             </li>
                         </ul>
