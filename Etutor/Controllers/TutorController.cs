@@ -27,14 +27,14 @@ namespace Etutor.Controllers
             return View(found);
         }
 
-        public ActionResult Detail(int? id)
+        public ActionResult Detail(int assignId, string search)
         {
-            //if (id != null)
-            //{
-            //    Session["TU_ID"] = id;
-            //}
-            //else { id = Convert.ToInt32(Session["TU_ID"]); }
-            var found = db.Documents.Where(m => m.Assign.Tutor.Id == id).ToList();
+            if (search == null)
+            {
+                search = "";
+            }
+            var found = db.Documents.Where(m => m.Assign.Id == assignId).ToList();
+            Session["S_ID"] = assignId;
             return View(found);
         }
 
@@ -61,7 +61,7 @@ namespace Etutor.Controllers
         public ActionResult Upload(HttpPostedFileBase file)
         {
             var tutid = Convert.ToInt32(Session["TU_ID"]);
-
+            int assignId = Convert.ToInt32(Session["S_ID"]);
             if (file?.ContentLength > 0)
             {
                 try
@@ -90,7 +90,7 @@ namespace Etutor.Controllers
                         Type = type,
                         Url = path,
                         Name = filename,
-                        Assign = db.Assigns.Where(m => m.Id == tutid).SingleOrDefault()
+                        Assign = db.Assigns.Where(m => m.Id == assignId).SingleOrDefault()
                     };
                     db.Documents.Add(doc);
                     db.SaveChanges();
@@ -113,7 +113,7 @@ namespace Etutor.Controllers
                 TempData["MSG"] = ViewBag.Error;
                 return RedirectToAction("Upload", "Tutor");
             }
-            return RedirectToAction("Detail", "Tutor");
+            return RedirectToAction("Detail", "Tutor", new { assignId = assignId});
         }
 
         public ActionResult Chat()
