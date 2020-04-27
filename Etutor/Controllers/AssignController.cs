@@ -4,10 +4,12 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
 using Etutor.DAL;
 using Etutor.Models;
+using EASendMail;
 
 namespace Etutor.Controllers
 {
@@ -37,7 +39,7 @@ namespace Etutor.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult CreateMultiple([Bind(Include = "Id")] List<int> stdID, int tutorID, int? staffID)
         {
-            for (int i=0; i < stdID.Count; i++)
+            for (int i = 0; i < stdID.Count; i++)
             {
                 Assign assign = new Assign();
                 if (ModelState.IsValid)
@@ -52,6 +54,7 @@ namespace Etutor.Controllers
                     assign.Staff = staff;
                     db.Assigns.Add(assign);
                     db.SaveChanges();
+                    Email(student.Email, tutor.Email, "Assign Notification", "You are assigned to new course");
                 }
             }
             return RedirectToAction("Index");
@@ -72,9 +75,9 @@ namespace Etutor.Controllers
         // POST: Assigns/Edit/id
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id")] int stdID, int tutorID, int? staffID)
+        public ActionResult Edit([Bind(Include = "Id")] int? stdID, int tutorID, int? staffID)
         {
-            Assign assign = db.Assigns.Where(m=>m.Id==stdID).SingleOrDefault();
+            Assign assign = db.Assigns.Where(m => m.Id == stdID).SingleOrDefault();
             if (ModelState.IsValid)
             {
                 var student = db.Students.Where(m => m.Id == stdID).SingleOrDefault();
@@ -85,6 +88,7 @@ namespace Etutor.Controllers
                 assign.Tutor = tutor;
                 assign.Staff = staff;
                 db.SaveChanges();
+                Email(student.Email, tutor.Email, "Change Tutor", "There is an update of tutor");
                 return RedirectToAction("Index");
             }
             ViewBag.Id = new SelectList(db.Students, "Name", "Phone", "Email", assign.Id);
@@ -111,10 +115,74 @@ namespace Etutor.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+
             Assign assign = db.Assigns.Find(id);
+            var docList = db.Documents.Where(m => m.Assign.Id == id).ToList();
+            foreach (var doc in docList)
+            {
+                DeleteDoc(doc.Id);
+            }
             db.Assigns.Remove(assign);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public void DeleteDoc(int id)
+        {
+            var doc = db.Documents.Where(m => m.Id == id).FirstOrDefault();
+            db.Documents.Remove(doc);
+            db.SaveChanges();
+        }
+
+        public void Email(string To, string Cc, string Subject, string TextBody)
+        {
+            try
+            {
+                SmtpMail oMail = new SmtpMail("TryIt");
+
+                // Your gmail email address
+                oMail.From = "etutorlearning99@gmail.com";
+
+                // Set recipient email address
+                oMail.To = To;
+                oMail.Cc = Cc;
+
+                // Set email subject
+                oMail.Subject = Subject;
+
+                // Set email body
+                oMail.TextBody = TextBody;
+
+                // Gmail SMTP server address
+                SmtpServer oServer = new SmtpServer("smtp.gmail.com");
+
+                // Gmail user authentication
+                // For example: your email is "gmailid@gmail.com", then the user should be the same
+                oServer.User = "etutorlearning99@gmail.com";
+                oServer.Password = "P@ssw0rd99";
+
+                // If you want to use direct SSL 465 port,
+                // please add this line, otherwise TLS will be used.
+                // oServer.Port = 465;
+
+                // set 587 TLS port;
+                oServer.Port = 587;
+
+                // detect SSL/TLS automatically
+                oServer.ConnectType = SmtpConnectType.ConnectSSLAuto;
+
+                Console.WriteLine("start to send email over SSL ...");
+
+                EASendMail.SmtpClient oSmtp = new EASendMail.SmtpClient();
+                oSmtp.SendMail(oServer, oMail);
+
+                Console.WriteLine("email was sent successfully!");
+            }
+            catch (Exception ep)
+            {
+                Console.WriteLine("failed to send email with the following error:");
+                Console.WriteLine(ep.Message);
+            }
         }
 
         protected override void Dispose(bool disposing)
