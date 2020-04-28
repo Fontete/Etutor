@@ -40,6 +40,10 @@
                     @Html.ActionLink("Dashboard", "Index", "Tutor")
 
                 </li>
+                <li>
+                    @Html.ActionLink("Messages", "Index", "Chat")
+
+                </li>
             </ul>
             <ul class="list-unstyled CTAs">
             </ul>
@@ -94,6 +98,7 @@
                     </div>
                 </div>
                 <button class="btn btn-primary"><i class="fa fa-upload"></i>@Html.ActionLink("Upload your document", "Upload")</button>
+                <button onclick="location.href='@Url.Action("Chat","Chat"@*,new { id= Assign.Id}*@)'">Send message to your student</button>
             </div>
             <div class='container-fluid card-list'>
                 @foreach (var item in Model)
