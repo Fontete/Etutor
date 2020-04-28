@@ -55,7 +55,6 @@ namespace Etutor.Controllers
                     break;
             }
             Message newMessage = new Message();
-            //mes.Assign = assign;
             newMessage.BodyText = data.BodyText;
             newMessage.Time = DateTime.Now;
             newMessage.From = id;

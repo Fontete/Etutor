@@ -118,9 +118,14 @@ namespace Etutor.Controllers
 
             Assign assign = db.Assigns.Find(id);
             var docList = db.Documents.Where(m => m.Assign.Id == id).ToList();
+            var mesList = db.Messages.Where(m => m.Assign.Id == id).ToList();
             foreach (var doc in docList)
             {
                 DeleteDoc(doc.Id);
+            }
+            foreach (var mes in mesList)
+            {
+                DeleteMes(mes.Id);
             }
             db.Assigns.Remove(assign);
             db.SaveChanges();
@@ -131,6 +136,13 @@ namespace Etutor.Controllers
         {
             var doc = db.Documents.Where(m => m.Id == id).FirstOrDefault();
             db.Documents.Remove(doc);
+            db.SaveChanges();
+        }
+
+        public void DeleteMes(int id)
+        {
+            var mes = db.Messages.Where(m => m.Id == id).FirstOrDefault();
+            db.Messages.Remove(mes);
             db.SaveChanges();
         }
 
