@@ -189,7 +189,7 @@
   <ItemGroup>
     <Content Include="Content\asset\Etutor2.svg" />
     <Content Include="Content\asset\login-background.png" />
-    <Content Include="Content\asset\trắng.svg" />
+    <Content Include="Content\asset\white.svg" />
     <Content Include="Content\Chart.css" />
     <Content Include="Content\Chart.min.css" />
     <Content Include="Content\css\index.css" />

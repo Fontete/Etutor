@@ -14,7 +14,7 @@
 		</clipPath>
 		<g clip-path="url(#SVGID_2_)">
 			<g>
-				
+
 					<path fill="none" stroke="#DFDFDF" stroke-width="3" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="11.9583,11.9583" d="
 					M833.706-375.661C760.104-298.839,377.94,84.66,260.729-107.845C130.817-321.208,466.177-503.99,520.298-414.086
 					c53.4,88.709,27.625,416.008-248.917,516.813"/>
@@ -30,7 +30,7 @@
 		<use xlink:href="#SVGID_33_"  overflow="visible"/>
 	</clipPath>
 	<g clip-path="url(#SVGID_3_)">
-		
+
 			<image overflow="visible" opacity="0.25" width="777" height="876" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAwkAAANsCAYAAAAQouRlAAAACXBIWXMAAAsSAAALEgHS3X78AAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAW7hJREFUeNrs3euS48h1qNENdst+
 /0e1LFvWZYrnKGIqhEHlZSfAaiDBtSIquqca1LDY+pHfJJA7AgAAAAAAAAAAAAAAYNzy4tc/faQA
@@ -447,7 +447,7 @@ i7sCY+m/UnQVgSASAACgvz7OsZB/zlrnDK4qDkQCAACsj4XeOroVAuOFZ0QCAABceSgsXT+PC/8m
 EgAA4D8MhrWxIBIAAOCGomH0LwEAAAAAAAAAAG7QqwADAC/DbuE+nzMfAAAAAElFTkSuQmCC" transform="matrix(1 0 0 1 -589.3335 -338.001)">
 		</image>
 		<g>
-			<polyline fill="#F2D1A5" points="178.549,481.249 -453.183,-237.777 -475.853,-263.584 -532.048,-303.427 -531.935,-303.526 
+			<polyline fill="#F2D1A5" points="178.549,481.249 -453.183,-237.777 -475.853,-263.584 -532.048,-303.427 -531.935,-303.526
 				-567.901,-329.026 -567.673,-328.685 -568.015,-328.927 -515.078,-229.122 -492.406,-203.317 139.327,515.71 			"/>
 		</g>
 	</g>
@@ -459,7 +459,7 @@ EgAA4D8MhrWxIBIAAOCGomH0LwEAAAAAAAAAAG7QqwADAC/DbuE+nzMfAAAAAElFTkSuQmCC" transf
 	<path clip-path="url(#SVGID_3_)" fill="#E20A62" d="M168.745,489.864l-663.021-754.637c4.758,5.414,4.227,13.662-1.188,18.42
 		c-5.418,4.758-13.666,4.225-18.424-1.19l663.02,754.637"/>
 	<g clip-path="url(#SVGID_3_)">
-		
+
 			<image overflow="visible" opacity="0.5" width="938" height="573" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA6oAAAI9CAYAAAAzaIVRAAAACXBIWXMAAAsSAAALEgHS3X78AAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAX0tJREFUeNrs3Y1uG0myJtCg1DO9
 7/+2d9oWFxeYxnKrMzMis4o/RZ4DCJZl2SNSHKA/RWZ8XwEAAAAv5MtTAAAAgKAKAAAAgioAAACC
@@ -892,7 +892,7 @@ rCuhdSWoVsLraUOqoAoAAHCfwDr685XwujIpvZ71iRVUAQAA7htYV8PpngB6PfMTKqgCAAA8LrDO
 pwAAAABBFQAAAARVAAAABFUAAAAQVAEAABBUAQAA4CD/V4ABAMcgVk2UAaZ4AAAAAElFTkSuQmCC" transform="matrix(1 0 0 1 -351.3335 -291.001)">
 		</image>
 		<g>
-			
+
 				<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="298.2983" y1="1248.6699" x2="249.0352" y2="1214.2532" gradientTransform="matrix(0.0653 0.9979 -0.9979 0.0653 1344.5463 -383.1367)">
 				<stop  offset="0.0211" style="stop-color:#F2BB88"/>
 				<stop  offset="0.0883" style="stop-color:#EBB583"/>
@@ -903,11 +903,11 @@ pwAAAABBFQAAAARVAAAABFUAAAAQVAEAABBUAQAA4CD/V4ABAMcgVk2UAaZ4AAAAAElFTkSuQmCC" tr
 				<stop  offset="0.8424" style="stop-color:#FFE4C2"/>
 				<stop  offset="1" style="stop-color:#F2D1A5"/>
 			</linearGradient>
-			<polyline fill="url(#SVGID_4_)" points="562.905,180.301 -281.316,-270.675 -289.435,-255.479 -305.669,-225.087 
+			<polyline fill="url(#SVGID_4_)" points="562.905,180.301 -281.316,-270.675 -289.435,-255.479 -305.669,-225.087
 				-313.787,-209.892 530.434,241.085 			"/>
 		</g>
 	</g>
-	
+
 		<linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="57.0317" y1="1078.1631" x2="99.7743" y2="1104.6772" gradientTransform="matrix(-0.0627 1.2375 -1.0774 0.2142 1320.9304 -338.2791)">
 		<stop  offset="0" style="stop-color:#F4A93B"/>
 		<stop  offset="0.2677" style="stop-color:#FFD45C"/>
@@ -918,7 +918,7 @@ pwAAAABBFQAAAARVAAAABFUAAAAQVAEAABBUAQAA4CD/V4ABAMcgVk2UAaZ4AAAAAElFTkSuQmCC" tr
 		<stop  offset="0.8" style="stop-color:#EA5A24"/>
 		<stop  offset="1" style="stop-color:#F4A93B"/>
 	</linearGradient>
-	<polyline clip-path="url(#SVGID_3_)" fill="url(#SVGID_5_)" points="593.2,196.487 -281.316,-270.675 -313.787,-209.892 
+	<polyline clip-path="url(#SVGID_3_)" fill="url(#SVGID_5_)" points="593.2,196.487 -281.316,-270.675 -313.787,-209.892
 		560.731,257.27 	"/>
 </g>
 <path fill="#FFFFFF" d="M33.229,33.476l-11.497,1.388l-11.497,1.39c-0.222,0.025-0.406-0.087-0.501-0.251
