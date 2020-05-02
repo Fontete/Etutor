@@ -103,5 +103,22 @@ namespace Etutor.Controllers
             }
             return RedirectToAction("Index", "Student");
         }
+
+        public ActionResult Dashboard()
+        {
+            List<int> repartitions = new List<int>();
+            List<string> names = new List<string>();
+            int stdID = Convert.ToInt32(Session["S_ID"]);
+            var listAssign = db.Assigns.Where(m => m.Id == stdID).ToList();
+            foreach (var item in listAssign)
+            {
+                var totalMessage = db.Messages.Where(m => m.Assign.Id == item.Id).ToList();
+                repartitions.Add(totalMessage.Count);
+                names.Add(item.Tutor.Name);
+            }
+            ViewBag.TutorName = names;
+            ViewBag.TotalMessage = repartitions;
+            return View();
+        }
     }
 }
