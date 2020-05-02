@@ -116,8 +116,20 @@ namespace Etutor.Controllers
             return RedirectToAction("Detail", "Tutor", new { assignId = assignId});
         }
 
-        public ActionResult Chat()
+        public ActionResult Dashboard()
         {
+            List<int> repartitions = new List<int>();
+            List<string> names = new List<string>();
+            int tuID = Convert.ToInt32(Session["TU_ID"]);
+            var listAssign = db.Assigns.Where(m => m.Tutor.Id ==tuID).ToList();
+            foreach (var item in listAssign)
+            {
+                var totalMessage = db.Messages.Where(m => m.Assign.Id == item.Id).ToList();
+                repartitions.Add(totalMessage.Count);
+                names.Add(item.Student.Name);
+            }
+            ViewBag.StudentName = names;
+            ViewBag.TotalMessage = repartitions;
             return View();
         }
 

@@ -190,6 +190,8 @@
     <Content Include="Content\asset\Etutor2.svg" />
     <Content Include="Content\asset\login-background.png" />
     <Content Include="Content\asset\trắng.svg" />
+    <Content Include="Content\Chart.css" />
+    <Content Include="Content\Chart.min.css" />
     <Content Include="Content\css\index.css" />
     <Content Include="Content\css\dashboard.css" />
     <Content Include="Content\index.css" />
@@ -200,6 +202,8 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\Chart.js" />
+    <Content Include="Scripts\Chart.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -230,12 +234,12 @@
     <Content Include="Views\Student\Upload.cshtml" />
     <Content Include="Views\Student\Index.cshtml" />
     <Content Include="Views\Assign\Delete.cshtml" />
-    <Content Include="Views\Tutor\Chat.cshtml" />
     <Content Include="Views\Tutor\Index.cshtml" />
     <Content Include="Views\Tutor\Upload.cshtml" />
     <Content Include="Views\Tutor\Detail.cshtml" />
     <Content Include="Views\Chat\Index.cshtml" />
     <Content Include="Views\Chat\Chat.cshtml" />
+    <Content Include="Views\Tutor\Dashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
